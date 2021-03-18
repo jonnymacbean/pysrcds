@@ -11,12 +11,12 @@ import socket
 logger = logging.getLogger(__name__)
 
 # "Vanilla" RCON Packet types
-SERVERDATA_AUTH = 3
-SERVERDATA_AUTH_RESPONSE = 2
-SERVERDATA_EXECCOMMAND = 2
-SERVERDATA_RESPONSE_VALUE = 0
+SERVERDATA_AUTH = 0x03
+SERVERDATA_AUTH_RESPONSE = 0x02
+SERVERDATA_EXECCOMMAND = 0x02
+SERVERDATA_RESPONSE_VALUE = 0x00
 # Special packet type used by Squad RCON servers to indicate a chat message that streams in even without requests.
-SQUAD_CHAT_STREAM = 1
+SQUAD_CHAT_STREAM = 0x01
 # NOTE(bsubei): I completely invented this type just to internally signal end of multipacket response.
 END_OF_MULTIPACKET = 77
 
